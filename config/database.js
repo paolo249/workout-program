@@ -1,9 +1,9 @@
-const workout = require('workout');
+const mongoose = require('mongoose');
 
-workout.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL);
   
   // shortcut variable
-  const db = workout.connection;
+  const db = mongoose.connection;
   
   db.on('connected', function() {
     console.log(`Connected to MongoDB at ${db.host}:${db.port}`);
