@@ -5,9 +5,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
+require('dotenv').config();
+
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-require('dotenv').config();
+
 
 var app = express();
 
@@ -22,6 +25,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));  // add this
+
+
+// middleware to add req.user to the res.locals object
+// making user available to every ejs view
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
+
+
 
 app.use('/', indexRouter);
 app.use('/server', usersRouter);
