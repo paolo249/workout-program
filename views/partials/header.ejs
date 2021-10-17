@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+  <head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Workout Program</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
     <nav>
         <!-- <img src="/images/camera.svg"> -->
-        <a href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %>>ALL WORKOUTS</a>
+        <a href="/" <%- title === 'Home' ? 'class="active"' : '' %> >Home</a> &nbsp; &nbsp;
+        <a href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %> >All Workouts</a> &nbsp; &nbsp;
         <% if (user) { %>
-          
-          <a href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %>>
-            Create a Workout</a>
-          <a href="/logout">LOG OUT</a>
+        <!-- <a href="/workouts"> </a> -->
+        <a href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %> >Create a Workout</a> &nbsp; &nbsp;
+        <a href="/logout">LOG OUT</a> &nbsp; &nbsp;
+        <h> Welcome <h3> &nbsp; <%= user.name %></h3> </h2>
+
         <% } else { %>
-          <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+          <a href="/auth/google" class="login">Login/Sign-up</a>
+          &nbsp;
+          <img src="https://i.imgur.com/FHjYyi0.png">
         <% } %>
       </nav>
  </body>
