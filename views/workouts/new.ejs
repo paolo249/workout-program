@@ -1,16 +1,23 @@
 <%- include('../partials/header') %>
-<table id = "list">
-    <thead> 
-        <tr> 
-            <th> All Workouts: </th>
-           
-        </tr>
-    </thead>
-    <tbody> 
-        
-    </tbody>
-</table>
-
+<form id="new-form" action="/workouts" method="POST">
+    <label>Name of Workout: </label>
+    <input type="text" name="nameWorkout">
+    <label>Schedule Date:</label>
+    <input type="datetime-local" name="scheduleYear">
+    <label>Type of Workout:</label>
+    <select name="typeOfWorkout">
+        <option value="Upper Body">UPPER-BODY</option>
+        <option value="Lower Body">LOWER-BODY</option>
+        <option value="Cardio">CARDIO</option>
+    </select>
+    <label>Targetted Body:</label>
+    <input type="text" name="targetBody">
+    <label>Workout:</label>
+    <input type="text" name="workout">
+    <label>Completed:</label>
+    <input type="checkbox" value ="completed" checked>
+    <input type="submit" value ="Add Workout">
+</form>
 
 
 

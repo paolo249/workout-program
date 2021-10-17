@@ -6,6 +6,13 @@
   
 }
 
+#image {
+  max-width: 200px;
+  margin-left: 15px;
+  margin-top: 20px;
+  box-shadow: 2px 4px 5px 4px;
+
+}
 
 
 body {
@@ -38,7 +45,7 @@ nav > img {
 
 nav {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   align-items: center; 
   flex-direction: row;
   font-size: 25px;
@@ -47,3 +54,23 @@ nav {
 .login img {
   height: 30px;
 } 
+
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+#new-form *,
+#add-review-form *,
+#add-performer-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}

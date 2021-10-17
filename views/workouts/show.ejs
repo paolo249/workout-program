@@ -1,2 +1,26 @@
 <%- include('../partials/header') %>
+<table id = "list">
+    <thead> 
+        <tr> 
+            <th> All Workouts </th>
+            <!-- <input type="text" name="Workouts"> -->
+        </tr>
+    </thead>
+    <tbody> 
+        <% workouts.forEach(function(w) { %>
+            <tr>
+              <div>time: </div>
+              <td><%= w.scheduleYear%></td>  
+              <div>Type of Workout: </div>
+              <td><%= w.typeOfWorkout%></td>  
+              <div>Title: </div>
+              <td><%= w.targetBody%></td>  
+              <div>Title: </div>
+              <td><%= w.workout%></td>  
+              <td><a href="/workouts/<%= w._id%>"</td>
+              
+            </tr>
+        <% }); %>
+    </tbody>
+</table>
 <%- include('../partials/footer') %>

@@ -6,17 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Workout Program</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+
   </head>
   <body>
+    
     <nav>
         <!-- <img src="/images/camera.svg"> -->
+       
         <a href="/" <%- title === 'Home' ? 'class="active"' : '' %> >Home</a> &nbsp; &nbsp;
         <a href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %> >All Workouts</a> &nbsp; &nbsp;
         <% if (user) { %>
         <!-- <a href="/workouts"> </a> -->
         <a href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %> >Create a Workout</a> &nbsp; &nbsp;
-        <a href="/logout">LOG OUT</a> &nbsp; &nbsp;
-        <h> Welcome <h3> &nbsp; <%= user.name %></h3> </h2>
+        <a href="/logout">Log out</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <h3> Welcome &nbsp; <%= user.name %></h3>
 
         <% } else { %>
           <a href="/auth/google" class="login">Login/Sign-up</a>
