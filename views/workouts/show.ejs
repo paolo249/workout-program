@@ -2,23 +2,17 @@
 <table id = "list">
     <thead> 
         <tr> 
-            <th> All Workouts </th>
-            <!-- <input type="text" name="Workouts"> -->
-        </tr>
-    </thead>
-    <tbody> 
+            <th> All Workouts! </th>
+            <th> Time: </th>
+            <th> Type of Workout: </th>
+            <th> Title: </th>
         <% workouts.forEach(function(w) { %>
             <tr>
-              <div>time: </div>
-              <td><%= w.scheduleYear%></td>  
-              <div>Type of Workout: </div>
-              <td><%= w.typeOfWorkout%></td>  
-              <div>Title: </div>
-              <td><%= w.targetBody%></td>  
-              <div>Title: </div>
-              <td><%= w.workout%></td>  
-              <td><a href="/workouts/<%= w._id%>"</td>
-              
+              <td> <%= w.scheduleYear%>   </td>
+              <td> <%= w.typeOfWorkout%>  </td>   
+              <td> <%= w.targetBody%>     </td>
+              <td> <%= w.workout%>        </td>  
+              <td><a href="/workouts/<%= w._id%>"> DETAILS </a></td>
             </tr>
         <% }); %>
     </tbody>

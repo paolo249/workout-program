@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema; 
 
 const workoutSchema = new Schema({
-    allworkouts: {
-        type: String, 
-        required: true
-    },
     nameWorkout: {
         type: String,
         required: true
@@ -21,7 +17,10 @@ const workoutSchema = new Schema({
             return c; 
         }
     },
-    typeOfWorkout: String,
+    typeOfWorkout: {
+        type: String, 
+        enum: ['UPPER-BODY','LOWER-BODY','CARDIO']
+    },
     targetBody: {
         type: String, 
         required: true

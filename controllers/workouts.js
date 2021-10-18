@@ -4,7 +4,7 @@ module.exports = {
     index, 
     new: newWorkout,
     create,
-
+    // show
 }
 
 function index(req, res) {
@@ -15,15 +15,24 @@ function index(req, res) {
 
 
 
-function newWorkout(req,res) {
-    res.render('workouts/new', { title: 'Add Workout' });
-}
-
 function create(req, res) {
     const workout = new Workout(req.body);
     workout.save(function (err) {
-        if(err) return res.redirect('/workouts/new');
+        if(err) return res.render('/workouts/new');
         console.log(workout);
-        res.redirect(`/workouts/${workout._id}`);
+        res.redirect(`/workouts`);
     });
+}
+
+// function show(req, res) {
+//     Workout.findById(req.params.id, function (err, workout) {
+//         res.render("workouts/show", {
+//             workout,
+//             title: "Details",
+//         });
+//     })
+// }
+
+function newWorkout(req,res) {
+    res.render('workouts/new', { title: 'Add Workout' });
 }

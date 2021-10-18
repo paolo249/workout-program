@@ -1,17 +1,20 @@
 <%- include('../partials/header') %>
+<link rel='stylesheet' href='/stylesheets/style.css' />
 <table id = "list">
     <thead> 
         <tr> 
             <th> All Workouts </th>
+        
             <!-- <input type="text" name="Workouts"> -->
         </tr>
     </thead>
     <tbody> 
         <% workouts.forEach(function(w) { %>
             <tr>
-              <div>All Workouts: </div>
+       
               <td><%= w.nameWorkout %></td>
-              
+              <td><%= w.scheduleYear %></td>
+              <td><a href="/workouts/<%= w._id %>">DETAILS</a></td> 
             </tr>
         <% }); %>
     </tbody>
