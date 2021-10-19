@@ -74,3 +74,12 @@ nav {
   width: 10rem;
   margin-left: auto;
 }
+
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.delete-form button {
+  color: blueviolet;
+}

@@ -4,35 +4,35 @@ module.exports = {
     index, 
     new: newWorkout,
     create,
-    // show
+    delete: deleteWorkout
 }
 
-function index(req, res) {
-    Workout.find({}, function(err, workouts) {
-        res.render('workouts/index', {title: 'All Workouts', workouts });
+function deleteWorkout(req,res) {
+    Workout.findByIdAndDelete(req.params.id, function(err) {
+        res.redirect(`/workouts`);
     });
 }
-
 
 
 function create(req, res) {
     const workout = new Workout(req.body);
     workout.save(function (err) {
-        if(err) return res.render('/workouts/new');
+        console.log(err);
+        if(err) return res.render('workouts/new', { title: 'Add Workout' });
         console.log(workout);
         res.redirect(`/workouts`);
     });
 }
 
-// function show(req, res) {
-//     Workout.findById(req.params.id, function (err, workout) {
-//         res.render("workouts/show", {
-//             workout,
-//             title: "Details",
-//         });
-//     })
-// }
-
+            
 function newWorkout(req,res) {
     res.render('workouts/new', { title: 'Add Workout' });
-}
+    }
+
+
+
+function index(req, res) {
+    Workout.find({}, function(err, workouts) {
+    res.render('workouts/index', {title: 'All Workouts', workouts });
+        });
+    }
