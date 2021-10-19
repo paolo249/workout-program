@@ -38,6 +38,9 @@ git add -A
 git commit -m ‘first commit’
 git push
 
+Push repo to Heroku
+$ git push heroku main
+
 ☐ UPDATES:
 
 
