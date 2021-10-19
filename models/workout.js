@@ -43,7 +43,11 @@ const workoutSchema = new Schema({
         required: true
     },
     completed: { type: Boolean, default: false },
-    reviews: [reviewSchema]
+    reviews: [reviewSchema],
+    cheatmeals: [{
+        type: Schema.Types.ObjectId,
+        ref: "Cheatmeal"
+    }]
 }, {
    timestamps: true
 });

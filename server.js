@@ -14,6 +14,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var workoutRouter = require('./routes/workouts');
 var reviewsRouter = require('./routes/reviews');
+var cheatmealsRouter = require('./routes/cheatmeals');
 
 
 var app = express();
@@ -55,6 +56,8 @@ const isLoggedIn = require('./config/auth');
 app.use('/', indexRouter);
 app.use('/workouts', workoutRouter);
 app.use('/', isLoggedIn, reviewsRouter);
+app.use('/', isLoggedIn, cheatmealsRouter);
+
 
 
 

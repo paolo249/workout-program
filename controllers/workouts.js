@@ -1,5 +1,5 @@
 const Workout = require('../models/workout');
-
+const Cheatmeal = require('../models/cheatmeal');
 module.exports = {
     index, 
     new: newWorkout,
@@ -10,13 +10,19 @@ module.exports = {
 
 
 function show(req, res) {
-    Workout.findById(req.params.id, function(err, workout) {
-        res.render('workouts/show', {
-            title: "Workout Details",
-            workout,
-        });
-    });
-}
+    Workout.findById(req.params.id)
+      .populate('cheatmeals')
+      .exec(function (err, workout) {
+        Cheatmeal.find(
+          // query object
+          {_id: {$nin: workout.cheatmeals}},
+          function(err, cheatmeals) {
+            console.log(cheatmeals)
+            res.render('workouts/show', { title: 'Workout Detail', workout, cheatmeals });
+          }
+        );
+      });
+  }
 
 
 function deleteWorkout(req,res) {
@@ -30,6 +36,7 @@ function deleteWorkout(req,res) {
 
 function create(req, res) {
     const workout = new Workout(req.body);
+    // workout.user=req.user._id;
     workout.save(function (err) {
         console.log(err);
         if(err) return res.render('workouts/new', { title: 'Add Workout' });

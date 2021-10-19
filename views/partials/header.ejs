@@ -16,7 +16,8 @@
         <a href="/" <%- title === 'Home' ? 'class="active"' : '' %> >Home</a> | &nbsp; &nbsp;
         <a href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %> >All Workouts</a> | &nbsp; &nbsp;
         <% if (user) { %>
-        <!-- <a href="/workouts"> </a> -->
+        <a href="/cheatmeals/new"	<%- title === 'Add Cheatmeal' ? 'class="active"' : '' %>>
+          Add Cheatmeal</a>
         <a href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %> >Create a Workout</a> | &nbsp; &nbsp;
         <a href="/logout">Log out</a> | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <h3> Welcome &nbsp; <%= user.name %></h3>

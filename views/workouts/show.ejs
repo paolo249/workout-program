@@ -12,8 +12,30 @@
   <div>Workout: </div>
   <div><%= workout.workout %></div>
   <div><%= workout.completed ? 'Yes' : 'Nope' %></div>
+
+  <div>Cheat Meal:</div>
+  <ul>
+    <%- workout.cheatmeals.map(p =>
+      `<li>${p.name} <small>${p.cal}</small></li>`
+    ).join('') %>
+  </ul>
 </section>
-<!-- add to cast form below this comment -->
+
+ <form id="add-per-to-food" action="/workouts/<%= workout._id %>/cheatmeals" method="POST">
+  <select name="cheatmealId">
+    <%- cheatmeals.map(p => `<option value="${p._id}">${p.name}</option>`).join('') %>
+  </select>
+  <button type="submit">Add to CheatMeal</button>
+</form> 
+<!-- add to food form below this comment -->
+
+  <!-- <label> Cheat Meals: </label>
+ <% workout.reviews.forEach(function(r) { %>
+
+    <article class="badge"> <%= r.name %> </article>
+
+  <% }); %> -->
+
 
 <br><br>
 <h2>Reviews</h2>
