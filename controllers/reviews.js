@@ -2,21 +2,8 @@ const Workout = require('../models/workout');
 
 module.exports = {
     create,
-    delete: deleteReview
+    delete: deleteReview,
 }
-
-async function deleteReview(req,res) {
-    const workout = await Workout.findOne({'reviews._id': req.params.id});
-    const review = workout.reviews.id(req.params.id);
-    if (!review.user.equals(req.user._id)) return res.redirect(`/workouts/${workout._id}`);
-    review.remove();
-    await workout.save();
-    res.redirect(`/workouts/${workout._id}`);
-}
-
-
-
-
 function create(req,res) {
     Workout.findById(req.params.id, function(err, workout) {
         req.body.user = req.user._id;
@@ -27,4 +14,13 @@ function create(req,res) {
             res.redirect(`/workouts/${workout._id}`);
         });
     });
+}
+
+async function deleteReview(req,res) {
+    const workout = await Workout.findOne({'reviews._id': req.params.id});
+    const review = workout.reviews.id(req.params.id);
+    if (!review.user.equals(req.user._id)) return res.redirect(`/workouts/${workout._id}`);
+    review.remove();
+    await workout.save();
+    res.redirect(`/workouts/${workout._id}`);
 }

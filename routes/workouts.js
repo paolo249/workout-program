@@ -12,7 +12,9 @@ router.post('/', isLoggedIn, workoutsCtrl.create);
 // DELETE /workouts/:id
 router.delete('/:id', isLoggedIn, workoutsCtrl.delete);
 // GET /posts/:id  SHOW maybe?
-//  router.get('/:id', workoutsCtrl.show);
+ router.get('/:id', workoutsCtrl.show);
+
+
 
 
 

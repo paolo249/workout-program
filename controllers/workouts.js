@@ -4,14 +4,28 @@ module.exports = {
     index, 
     new: newWorkout,
     create,
-    delete: deleteWorkout
+    delete: deleteWorkout, 
+    show
 }
+
+
+function show(req, res) {
+    Workout.findById(req.params.id, function(err, workout) {
+        res.render('workouts/show', {
+            title: "Workout Details",
+            workout,
+        });
+    });
+}
+
 
 function deleteWorkout(req,res) {
     Workout.findByIdAndDelete(req.params.id, function(err) {
         res.redirect(`/workouts`);
     });
 }
+
+
 
 
 function create(req, res) {
