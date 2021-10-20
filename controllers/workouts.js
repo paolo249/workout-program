@@ -5,7 +5,9 @@ module.exports = {
     new: newWorkout,
     create,
     delete: deleteWorkout, 
-    show
+    show, 
+    edit, 
+    update
 }
 
 
@@ -32,8 +34,6 @@ function deleteWorkout(req,res) {
 }
 
 
-
-
 function create(req, res) {
     const workout = new Workout(req.body);
     // workout.user=req.user._id;
@@ -57,3 +57,25 @@ function index(req, res) {
     res.render('workouts/index', {title: 'All Workouts', workouts });
         });
     }
+
+function edit(req, res) {
+Workout.findById(req.params.id, function (err, workout) {
+    if (err) {
+    res.redirect(`/workouts/${req.params.id}`);
+    }
+    res.render("workouts/edit", {
+    workout,
+    title: "Edit Workouts",
+    workoutlist: workout.scheduleYear.toISOString().slice(0, 16),
+    });
+});
+}
+
+function update(req, res) {
+Workout.findByIdAndUpdate(req.params.id, req.body, function (err, workout) {
+    if (err) {
+    res.render("workouts/edit", { workout, title: "Edit Workout" });
+    }
+    res.redirect(`workouts/${workout._id}`);
+});
+}

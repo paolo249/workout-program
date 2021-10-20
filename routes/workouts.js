@@ -13,6 +13,8 @@ router.post('/', isLoggedIn, workoutsCtrl.create);
 router.delete('/:id', isLoggedIn, workoutsCtrl.delete);
 // GET /posts/:id  SHOW maybe?
  router.get('/:id', workoutsCtrl.show);
+ router.get('/:id/edit', workoutsCtrl.edit);
+router.put('/:id', workoutsCtrl.update);
 
 
 

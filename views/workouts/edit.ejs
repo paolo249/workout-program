@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<form action="/workouts" method="POST">
+    <label for="typeOfWorkout">Edit Type of Workout:
+        <select name="airline">
+            <option <%= workout.typeOfWorkout === "UPPER-BODY" ? "selected":"" %> value="UPPER-BODY">UPPER-BODY</option>
+            <option <%= workout.typeOfWorkout === "LOWER-BODY" ? "selected":"" %> value="LOWER-BODY">LOWER-BODY</option>
+            <option <%= workout.typeOfWorkout === "CARDIO" ? "selected":"" %> value="CARDIO">CARDIO</option>
+        </select>
+    </label>
+    <label for="nameWorkout">Edit Name of Workout:
+        <input type="text" name="nameWorkout" value="<%= workout.nameWorkout %>">
+    </label>
+    <label for="scheduleYear">Edit Date:
+        <input type="datetime-local" name="scheduleYear" value="<%= workoutlist %>">
+    </label>
+    <label for="targetBody">Edit Target Body:
+        <input type="text" name="targetBody" value="<%= workout.targetBody %>">
+    </label>
+    <button class="submit-button" type="submit">Accept Changes</button>
+</form>
+<%- include('../partials/footer') %>
