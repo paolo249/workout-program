@@ -40,6 +40,7 @@ git push
 
 Push repo to Heroku
 $ git push heroku main
+$ git push heroku
 
 ☐ UPDATES:
 

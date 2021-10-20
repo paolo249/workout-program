@@ -14,7 +14,6 @@
                     <button type="submit">X</button>
                   </form> </td>
                   <td> <form action="/workouts/<%= w._id %>/edit"> <button type="submit"> edit </button> </form></td>
-               <!-- <td>  <%= user.name %></td> -->
               <td><%= w.nameWorkout %></td>
               <td><%= w.scheduleYear %></td>
               <td><a href="/workouts/<%= w._id %>">DETAILS</a></td> 
@@ -22,4 +21,4 @@
         <% }); %>
     </tbody>
 </table>
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> 

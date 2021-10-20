@@ -30,6 +30,7 @@ function show(req, res) {
 function deleteWorkout(req,res) {
     Workout.findByIdAndDelete(req.params.id, function(err) {
         res.redirect(`/workouts`);
+        
     });
 }
 
@@ -76,6 +77,9 @@ Workout.findByIdAndUpdate(req.params.id, req.body, function (err, workout) {
     if (err) {
     res.render("workouts/edit", { workout, title: "Edit Workout" });
     }
-    res.redirect(`workouts/${workout._id}`);
-});
+    res.redirect(`/workouts/${workout._id}`);
+}); 
 }
+
+
+

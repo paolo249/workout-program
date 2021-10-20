@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
-<form action="/workouts" method="POST">
+<form action="/workouts/<%= workout.id%>" method="post">
     <label for="typeOfWorkout">Edit Type of Workout:
-        <select name="airline">
+        <select name="typeOfWorkout">
             <option <%= workout.typeOfWorkout === "UPPER-BODY" ? "selected":"" %> value="UPPER-BODY">UPPER-BODY</option>
             <option <%= workout.typeOfWorkout === "LOWER-BODY" ? "selected":"" %> value="LOWER-BODY">LOWER-BODY</option>
             <option <%= workout.typeOfWorkout === "CARDIO" ? "selected":"" %> value="CARDIO">CARDIO</option>
