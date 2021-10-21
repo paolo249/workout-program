@@ -49,7 +49,12 @@ nav > a{
 
 nav > a:hover:not(.active) {
   color: brown;
+  
 }
+/* nav > #idname:hover:not(.active) {
+  color: blue;
+}
+  */
 
 nav > a.active {
   color: white;
@@ -84,7 +89,8 @@ nav {
 }
 
 #new-form *,
-#add-review-form *
+#add-review-form *,
+#show-page *
 {
   font-size: 20px;
   padding: 5px;
@@ -135,4 +141,13 @@ tbody {
 tbody > tr > td > button[type="submit"] {
   font-size: 20px;
   padding: 9px 12px;
+}
+
+tbody > tr {
+  text-align: center;
+  font-size: 20px;
+  padding: 9px 12px;
+}
+thead > tr {
+  text-decoration: underline;
 }

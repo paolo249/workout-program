@@ -1,19 +1,15 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name of Workout: </div>
-  <div><%= workout.nameWorkout %></div>
-  <div>Schedule: </div>
-  <div><%= workout.scheduleYear %></div>
-  <div>Workout Type: </div>
-  <div><%= workout.typeOfWorkout %></div>
-  <div>Target Body: </div>
-  <div><%= workout.targetBody %></div>
-  <div>Workout: </div>
-  <div><%= workout.workout %></div>
-  <div><%= workout.completed ? 'Yes' : 'Nope' %></div>
+  &nbsp;
+  <div><bold>Name of Workout: </bold><%= workout.nameWorkout %></div>
+  <div><bold>Schedule:</bold> <%= workout.scheduleYear %></div>
+  <div><bold>Workout Type:</bold>  <%= workout.typeOfWorkout %></div>
+  <div><bold>Target Body:</bold> <%= workout.targetBody %></div>
+  <div><bold>Workout:</bold> <%= workout.workout %></div>
+  <div><bold> Completed:</bold><%= workout.completed ? 'Yeah!' : 'No' %></div>
 
-  <div>Cheat Meal:</div>
+  <div><bold>Cheat Meal:</bold></div>
   <ul>
     <%- workout.cheatmeals.map(p =>
       `<li>${p.name} <small>${p.cal}</small></li>`
@@ -27,22 +23,14 @@
   </select>
   <button type="submit">Add to CheatMeal</button>
 </form> 
-<!-- add to food form below this comment -->
-
-  <!-- <label> Cheat Meals: </label>
- <% workout.reviews.forEach(function(r) { %>
-
-    <article class="badge"> <%= r.name %> </article>
-
-  <% }); %> -->
-
 
 <br><br>
-<h2>Reviews</h2>
+<!-- <h2>Reviews</h2> -->
 <% if (user) { %>
   <form id="add-review-form" method="POST" action="/workouts/<%= workout._id %>/reviews">
-    <label>Review:</label>
-    <textarea name="content"></textarea>
+    <label>Review:</label> <br>
+    <textarea name="content"></textarea> <br>
+     &nbsp;
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -59,11 +47,10 @@
   <table>
     <thead>
       <tr>
-        <th>User</th>
+        <th>User</th> 
         <th>Date</th>
         <th>Review</th>
-        <th>Rating</th>
-        <th></th>
+        <th>Rating</th><br><br>
       </tr>
     </thead>
     <tbody>
@@ -84,10 +71,10 @@
           </td>
         </tr>
       <% }); %>
-      <tr>
+      <!-- <tr>
         <td colspan="3"></td>
         <td><strong><%= (total / workout.reviews.length).toFixed(1) %></strong></td>
-      </tr>
+      </tr> -->
     </tbody>
   </table>
   
