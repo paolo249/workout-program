@@ -47,6 +47,6 @@ $ git push heroku
 
 
 ☐ ICEBOX ITEMS:
-Next Step(10/7/21): 
-- DELETE and EDIT (CRUD) 
-- add plus 1 to year (date)
+Next Step(10/20/21): 
+- add responsive nav bar
+- change nav bar design

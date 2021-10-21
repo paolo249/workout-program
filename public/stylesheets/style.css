@@ -2,6 +2,8 @@
   box-sizing: border-box;
   font-family: Helvetica;
   color: black;
+  font-family: 'Bebas Neue', cursive;
+
 }
 
 #image {
@@ -95,7 +97,11 @@ nav {
   margin-left: auto;
 }
 
-#add-cheatmeal-form {
+#add-cheatmeal-form > input {
+  font-family: 'Bebas Neue', cursive;
+}
+
+#badge-container {
   font-family: 'Bebas Neue', cursive;
 }
 

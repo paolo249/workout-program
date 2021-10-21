@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
-
+<link rel='stylesheet' href='/stylesheets/styletwo.css' />
 <h2>Please make sure that your cheatmeal is not added in the following list:</h2>
+<section class ="cheatpage">
 <section id="badge-container">
   <% cheatmeals.forEach(function(c) { %>
     <article class="badge"><%= c.name %></article>
@@ -8,11 +9,11 @@
 </section>
 
 <form id="add-cheatmeal-form" action="/cheatmeals" method="POST">
-  <label>Add Cheat Meal:</label>
+  <label>Cheat Meal:</label>
   <input type="text" name="name">
   <label>Calories:</label>
   <input type="number" name="cal">
   <input type="submit" value="Add Cheatmeal">
 </form>
-
+</section >
 <%- include('../partials/footer') %>
