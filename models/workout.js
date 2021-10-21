@@ -32,8 +32,9 @@ const workoutSchema = new Schema({
     },
     typeOfWorkout: {
         type: String, 
-        enum: ['UPPER-BODY','LOWER-BODY','CARDIO']
+        enum: ['STRENGTH','FLEXIBILITY','AEROBIC']
     },
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
     targetBody: {
         type: String, 
         required: true

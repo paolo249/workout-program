@@ -1,26 +1,13 @@
-
-/* 
-body{
-  background: url('') center no-repeat;
-  background-size: cover;
-
-
-
-*/
-
-
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: white;
-  background-color: #424748;
-  
+  color: black;
 }
 
 #image {
   max-width: 200px;
-  margin-left: 15px;
-  margin-top: 20px;
+  margin-left: 800px;
+  margin-top: 70px;
   box-shadow: 2px 4px 5px 4px;
 
 }
@@ -28,22 +15,39 @@ body{
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Bebas Neue", Helvetica, Arial, sans-serif;
+  /* font-family: 'Bebas Neue', cursive; */
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
-a {
-  color: #00B7FF;
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-y: scroll;
 }
-/* nav > a , .login{
+
+nav > a{
+  color: whitesmoke;
   margin: 20px;
   text-decoration: none;
   padding: 10px;
   border-radius: 5px;
-} */
+  font-family: 'Bebas Neue', cursive;
+  
+}
 
 nav > a:hover:not(.active) {
-  color: white;
-  background-color: #424748;
+  color: brown;
+  /* background-color: #424748; */
 }
 
 nav > a.active {
@@ -52,6 +56,9 @@ nav > a.active {
 }
 nav > img {
   height: 34px;
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
 }
 
 nav {
@@ -60,21 +67,23 @@ nav {
   align-items: center; 
   flex-direction: row;
   font-size: 25px;
+
+  background: url(https://i.imgur.com/P2Uki6f.jpg) center no-repeat;
+  background-size: cover;
 }
 
-.login img {
+/* .login img {
   height: 30px;
-} 
+}  */
 
 #new-form {
   display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+  grid-gap: 40px;
+  grid-template-columns: repeat(1, minmax(auto, 23rem));
 }
 
 #new-form *,
-#add-review-form *,
-#add-performer-form * {
+#add-review-form * {
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -82,8 +91,12 @@ nav {
 
 #new-form input[type="submit"] {
   grid-column: span 2;
-  width: 10rem;
+  width: rem;
   margin-left: auto;
+}
+
+#add-cheatmeal-form {
+  font-family: 'Bebas Neue', cursive;
 }
 
 .delete-form {

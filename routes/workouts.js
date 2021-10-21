@@ -6,11 +6,11 @@ const isLoggedIn = require('../config/auth');
 //  GET /workouts 
 router.get('/', workoutsCtrl.index);
 // GET /workouts/new
-router.get('/new', isLoggedIn, workoutsCtrl.new);
+router.get('/new', workoutsCtrl.new);
 // POST /workouts/new
-router.post('/', isLoggedIn, workoutsCtrl.create);
+router.post('/', workoutsCtrl.create);
 // DELETE /workouts/:id
-router.delete('/:id', isLoggedIn, workoutsCtrl.delete);
+router.delete('/:id', workoutsCtrl.delete);
 // GET /posts/:id  SHOW maybe?
  router.get('/:id', workoutsCtrl.show);
  router.get('/:id/edit', workoutsCtrl.edit);

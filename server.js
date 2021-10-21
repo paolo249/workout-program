@@ -54,7 +54,7 @@ app.use(function(req, res, next) {
 const isLoggedIn = require('./config/auth');
 
 app.use('/', indexRouter);
-app.use('/workouts', workoutRouter);
+app.use('/workouts', isLoggedIn, workoutRouter);
 app.use('/', isLoggedIn, reviewsRouter);
 app.use('/', isLoggedIn, cheatmealsRouter);
 

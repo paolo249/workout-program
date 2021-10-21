@@ -28,7 +28,7 @@ function show(req, res) {
 
 
 function deleteWorkout(req,res) {
-    Workout.findByIdAndDelete(req.params.id, function(err) {
+    Workout.findOneAndDelete({_id: req.params.id, user:req.user._id}, function(err) {
         res.redirect(`/workouts`);
         
     });
@@ -37,7 +37,7 @@ function deleteWorkout(req,res) {
 
 function create(req, res) {
     const workout = new Workout(req.body);
-    // workout.user=req.user._id;
+    workout.user=req.user._id;  // user info coming from database 
     workout.save(function (err) {
         console.log(err);
         if(err) return res.render('workouts/new', { title: 'Add Workout' });
@@ -54,7 +54,7 @@ function newWorkout(req,res) {
 
 
 function index(req, res) {
-    Workout.find({}, function(err, workouts) {
+    Workout.find({user:req.user._id}, function(err, workouts) {
     res.render('workouts/index', {title: 'All Workouts', workouts });
         });
     }
@@ -73,7 +73,7 @@ Workout.findById(req.params.id, function (err, workout) {
 }
 
 function update(req, res) {
-Workout.findByIdAndUpdate(req.params.id, req.body, function (err, workout) {
+Workout.findOneAndUpdate({_id: req.params.id, user:req.user._id}, req.body, function (err, workout) {
     if (err) {
     res.render("workouts/edit", { workout, title: "Edit Workout" });
     }

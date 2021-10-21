@@ -33,5 +33,16 @@ router.get('/logout', function(req, res) {
   res.redirect('/');
 });
 
+// app.get(
+//   "/auth/google",
+//   passport.authenticate(
+//       "google",
+//       {
+//           scope: ["profile", "email"],
+//           prompt: "select_account"
+//       }
+//   )
+// );
+
 module.exports = router;
 
