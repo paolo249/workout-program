@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-<form action="/workouts/<%= workout.id%>" method="post">
+<form class=" edit-form" action="/workouts/<%= workout.id%>" method="post">
     <label for="typeOfWorkout">Edit Type of Workout:
         <select name="typeOfWorkout">
             <option <%= workout.typeOfWorkout === "STRENGTH" ? "selected":"" %> value="STRENGTH">STRENGTH</option>
@@ -10,7 +10,7 @@
     <label for="nameWorkout">Edit Name of Workout:
         <input type="text" name="nameWorkout" value="<%= workout.nameWorkout %>">
     </label>
-    <label for="scheduleYear">Edit Date:
+    <label for="scheduleYear" id= "edit-date">Edit Date:
         <input type="datetime-local" name="scheduleYear" value="<%= workoutlist %>">
     </label>
     <label for="targetBody">Edit Target Body:

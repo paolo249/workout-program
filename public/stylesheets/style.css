@@ -6,27 +6,27 @@
 
 }
 
-#image {
-  max-width: 200px;
-  margin-left: 800px;
-  margin-top: 70px;
-  box-shadow: 2px 4px 5px 4px;
-
-}
-
-
 body {
   padding: 50px;
   font: 14px "Bebas Neue", Helvetica, Arial, sans-serif;
-  /* font-family: 'Bebas Neue', cursive; */
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
   display: grid;
   grid-template-rows: 50px 1fr;
   grid-template-areas: 
     "nav"
-    "main"
+    "main" "image"
 }
+
+#image {
+  display: grid;
+  max-width: 200px;
+  margin-left: 800px;
+  margin-top: 40px;
+  box-shadow: 2px 4px 5px 4px;
+
+}
+
 
 body > main {
   grid-area: main;
@@ -49,7 +49,6 @@ nav > a{
 
 nav > a:hover:not(.active) {
   color: brown;
-  /* background-color: #424748; */
 }
 
 nav > a.active {
@@ -85,7 +84,8 @@ nav {
 }
 
 #new-form *,
-#add-review-form * {
+#add-review-form *
+{
   font-size: 20px;
   padding: 5px;
   border-radius: 5px;
@@ -112,4 +112,27 @@ nav {
 
 .delete-form button {
   color: blueviolet;
+  padding: 9px 12px;
+}
+
+tbody {
+  font-size: 30px;
+}
+
+.edit-form * {
+  display: flex;
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  flex-direction: column;
+}
+#edit-date input[type="datetime-local"] {
+  font-size: 25px;
+  display: flex; 
+  flex-direction: row;
+}
+
+tbody > tr > td > button[type="submit"] {
+  font-size: 20px;
+  padding: 9px 12px;
 }

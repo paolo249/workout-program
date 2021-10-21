@@ -1,0 +1,21 @@
+body {
+grid-area: main;
+background: url(https://i.imgur.com/y2GZHA0.png) center no-repeat;
+background-size: cover;
+grid-template-areas:  
+  'header'
+  'main'
+  'main'
+  'footer';
+}
+
+footer {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+}
+
+#color {
+    color: red; 
+}

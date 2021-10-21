@@ -3,10 +3,7 @@
     font-family: 'Bebas Neue', cursive;
   }
   
-  body {
-    background: url(https://i.imgur.com/P2Uki6f.jpg) center no-repeat;
-    background-size: cover;
-  }
+
   
   #add-cheatmeal-form *, #badge-container article[class="badge"] {
     font-size: 20px;
