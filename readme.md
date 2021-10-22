@@ -10,8 +10,16 @@
 
 
 ☐ Screenshot(s): 
+## Open Beta Phase ##
+![workout-program](https://i.imgur.com/N9wBT3P.png)
+## Alpha Phase (RTW) ##
+![workout-program](https://i.imgur.com/Z3EBwfJ.png)
+![workout-program](https://imgur.com/WZxwrc5)
+![workout-program](https://i.imgur.com/eCWBIYO.png)
 
-
+[Imgur](https://i.imgur.com/eCWBIYO.png)
+[Imgur](https://i.imgur.com/N9wBT3P.png)
+[Imgur](https://i.imgur.com/Z3EBwfJ.png)
 
 
 ☐ Technologies Used: 

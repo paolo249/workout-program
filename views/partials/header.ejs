@@ -13,10 +13,10 @@
     <nav>       
         <a href="/" <%- title === 'Home' ? 'class="active"' : '' %> >Home</a> &nbsp; | &nbsp; 
         <% if (user) { %>
-        <a href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %> >All Workouts</a> &nbsp;| &nbsp; 
-        <a href="/cheatmeals/new"	<%- title === 'Add Cheatmeal' ? 'class="active"' : '' %>> 
+        <a id="allworkouts" href="/workouts" <%- title === 'All Workouts' ? 'class="active"' : '' %> >All Workouts</a> &nbsp;| &nbsp; 
+        <a id="cheatmeals" href="/cheatmeals/new"	<%- title === 'Add Cheatmeal' ? 'class="active"' : '' %>> 
           Add Cheatmeal</a> &nbsp; | &nbsp; 
-        <a href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %> >Create a Workout</a> &nbsp;| &nbsp;
+        <a id="workout" href="/workouts/new"	<%- title === 'Add Workout' ? 'class="active"' : '' %> >Create a Workout</a> &nbsp;| &nbsp;
         <a href="/logout">Log out</a> &nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;
         <h4>  Welcome  &nbsp; <%= user.name %></h4>
     
